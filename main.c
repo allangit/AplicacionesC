@@ -1,30 +1,45 @@
+
 #include <stdio.h>
+#include <mysql.h>
+#include <mysqld_error.h>
 #include <stdlib.h>
-#define pi 3.14
+#include "funciones.h"
 
-enum parametros{
+
+int main(){
+	
+	
+	int error,i=0;
+	system("color 9");
+	printf("Trabajando con Bases de Datos\n\n");
+
+	char *consulta[]={"drop database embedded","create database embedded","use embedded","create table sensores(nombre varchar(100),ubicacion varchar(100))",
+					  "insert into sensores(nombre,ubicacion) values(%s,%s),"};
+	MYSQL *conexion;
+	error=conectar(&conexion);
+	
+	if(!error){
 		
-	corriente,
-	voltaje,
-	potencia,
-	resistencia
-}var1,var2,var3,var4;
+		for(i; i<4; i++){
+			
+				ejecutar_consultar(conexion,consulta[i]);
+		}
+	
+	}
 
-
-int main() {
-	
-
-	
-	
-	var1=corriente;
-	var2=voltaje;
-	var3=potencia;
-	var4=resistencia;
-	
-	printf("El valor de la variable es %d",var2);
-	
-	
-	
-	
-	return 0;
+	return 0;	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
