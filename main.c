@@ -1,8 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define pi 3.14
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+enum parametros{
+		
+	corriente,
+	voltaje,
+	potencia,
+	resistencia
+}var1,var2,var3,var4;
 
-int main(int argc, char *argv[]) {
+
+int main() {
+	
+
+	
+	
+	var1=corriente;
+	var2=voltaje;
+	var3=potencia;
+	var4=resistencia;
+	
+	printf("El valor de la variable es %d",var2);
+	
+	
+	
+	
 	return 0;
 }
